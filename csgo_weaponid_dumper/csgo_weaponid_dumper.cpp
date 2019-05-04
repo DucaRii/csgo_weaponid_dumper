@@ -9,8 +9,8 @@ using namespace tyti;
 
 int main()
 {
-    std::cout << "Hey! I hope you are having a great day!" << std::endl <<
-		"I will now try dump the weapon ids for you!" << std::endl; 
+	std::cout << "Hey! I hope you are having a great day!" << std::endl <<
+		"I will now try dump the weapon ids for you!" << std::endl;
 
 	std::ifstream items_game( "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Counter-Strike Global Offensive\\csgo\\scripts\\items\\items_game.txt" );
 	if ( !items_game.is_open() )
@@ -37,9 +37,11 @@ int main()
 		const auto inner = index.second;
 
 		auto name = inner->attribs[ "name" ];
+		const auto prefab_name = inner->attribs[ "prefab" ];
 
 		/// Only add needed items
-		if ( android::base::StartsWith(name, "weapon_") )
+		if ( android::base::StartsWith( name, "weapon_" ) ||
+			 android::base::StartsWith( prefab_name, "hands" ) )
 		{
 			/// Capitalize the name
 			std::transform( name.begin(), name.end(), name.begin(), ::toupper );
