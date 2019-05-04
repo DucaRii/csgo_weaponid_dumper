@@ -12,7 +12,7 @@ int main()
 	std::cout << "Hey! I hope you are having a great day!" << std::endl <<
 		"I will now try dump the weapon ids for you!" << std::endl;
 
-	std::ifstream items_game( "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Counter-Strike Global Offensive\\csgo\\scripts\\items\\items_game.txt" );
+	std::ifstream items_game( "items_game.txt" );
 	if ( !items_game.is_open() )
 	{
 		std::cout << "ERROR: Failed to open items_game.txt, make sure you placed the program in the right folder";
