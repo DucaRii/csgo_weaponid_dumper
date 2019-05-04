@@ -58,7 +58,7 @@ int main()
 		return 0;
 	}
 
-	weapon_ids_log << "enum ClassIds \n{" << std::endl;
+	weapon_ids_log << "enum WeaponIds \n{" << std::endl;
 	for ( const auto& item : weapon_ids )
 	{
 		weapon_ids_log << "\t" << item.second << " = " << item.first << std::endl;
