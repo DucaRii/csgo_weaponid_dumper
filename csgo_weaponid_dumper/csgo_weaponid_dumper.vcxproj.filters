@@ -18,9 +18,15 @@
     <ClCompile Include="csgo_weaponid_dumper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="external\android_strings\android_strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\vdf_parser\vdf_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external\android_strings\android_strings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -152,8 +152,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="csgo_weaponid_dumper.cpp" />
+    <ClCompile Include="external\android_strings\android_strings.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external\android_strings\android_strings.h" />
     <ClInclude Include="external\vdf_parser\vdf_parser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

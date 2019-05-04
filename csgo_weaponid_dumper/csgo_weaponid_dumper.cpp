@@ -5,6 +5,8 @@
 #include "external/vdf_parser/vdf_parser.h"
 using namespace tyti;
 
+#include "external/android_strings/android_strings.h"
+
 int main()
 {
     std::cout << "Hey! I hope you are having a great day!" << std::endl <<
@@ -27,6 +29,7 @@ int main()
 	for ( const auto& index : items_parsed.childs[ "items" ]->childs )
 	{
 		const auto id = std::atoi( index.first.c_str() );
+
 		/// Skip first item since it's a default item
 		if ( id == 0 )
 			continue;
@@ -36,14 +39,12 @@ int main()
 		auto name = inner->attribs[ "name" ];
 
 		/// Only add needed items
-		if ( name.find( "weapon_" ) != std::string::npos &&
-			 name.find( "case" ) == std::string::npos )
+		if ( android::base::StartsWith(name, "weapon_") )
 		{
+			/// Capitalize the name
 			std::transform( name.begin(), name.end(), name.begin(), ::toupper );
 			weapon_ids.push_back( std::make_pair( id, name ) );
 		}
-
-		//weapon_ids.push_back( std::make_pair( id, name ) );
 	}
 
 	/// Sort weapon ids

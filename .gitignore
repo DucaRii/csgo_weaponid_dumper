@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+*.tlog
+*.log
+*.pdb
+*.iobj
+*.ipdb
+*.db
+.vs/csgo_weaponid_dumper/v15/.suo
+*.opendb
+*.ipch
